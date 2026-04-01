@@ -1,0 +1,45 @@
+{
+  "name": "kotatsu-project-companion",
+  "version": "0.1.0",
+  "description": "Project-local Codex companion for maintaining the Kotatsu Android app, parser fork, and project-specific safety rules.",
+  "author": {
+    "name": "Kotatsu Workspace",
+    "email": "workspace@kotatsu.local.invalid",
+    "url": "https://github.com/KotatsuApp/Kotatsu"
+  },
+  "homepage": "https://github.com/KotatsuApp/Kotatsu",
+  "repository": "https://github.com/KotatsuApp/Kotatsu",
+  "license": "GPL-3.0-only",
+  "keywords": [
+    "kotatsu",
+    "android",
+    "parsers",
+    "gradle",
+    "maintenance",
+    "manga"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Kotatsu Project Companion",
+    "shortDescription": "Maintain the Kotatsu app, parser fork, and repo rules",
+    "longDescription": "Project-local companion plugin for this Kotatsu workspace. It captures the repo layout, the local parser fork workflow, the Olympustaff/TEAMXNOVEL source mapping, the permanent blocked-content policy, and the validation commands we should keep using in future sessions.",
+    "developerName": "Kotatsu Workspace",
+    "category": "Coding",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/KotatsuApp/Kotatsu",
+    "privacyPolicyURL": "https://github.com/KotatsuApp/Kotatsu",
+    "termsOfServiceURL": "https://github.com/KotatsuApp/Kotatsu/blob/devel/LICENSE",
+    "defaultPrompt": [
+      "Inspect this Kotatsu change and tell me which app or parser modules it touches most.",
+      "Trace this broken source through the local parser fork and suggest the safest fix.",
+      "Validate this Kotatsu task with the right parser tests, unit tests, and Gradle build."
+    ],
+    "brandColor": "#1976D2",
+    "composerIcon": "./assets/kotatsu-icon.svg",
+    "logo": "./assets/kotatsu-logo.svg",
+    "screenshots": []
+  }
+}

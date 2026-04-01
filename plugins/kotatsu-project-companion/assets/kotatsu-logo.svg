@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 160" role="img" aria-labelledby="title">
+  <title>Kotatsu Project Companion Logo</title>
+  <defs>
+    <linearGradient id="panel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1976D2"/>
+      <stop offset="100%" stop-color="#0F4C81"/>
+    </linearGradient>
+  </defs>
+  <rect width="320" height="160" rx="28" fill="#EAF3FB"/>
+  <rect x="16" y="16" width="112" height="128" rx="24" fill="url(#panel)"/>
+  <path d="M42 40h28c20.987 0 38 17.013 38 38v38H70c-20.987 0-38-17.013-38-38V40z" fill="#FFFFFF" opacity="0.98"/>
+  <path d="M70 40h8c20.987 0 38 17.013 38 38v38h-8c-20.987 0-38-17.013-38-38V40z" fill="#E3F2FD"/>
+  <path d="M46 58h52" stroke="#1976D2" stroke-width="5" stroke-linecap="round"/>
+  <path d="M46 74h58" stroke="#1976D2" stroke-width="5" stroke-linecap="round" opacity="0.9"/>
+  <circle cx="104" cy="40" r="14" fill="#FF7043"/>
+  <path d="M104 31v18M95 40h18" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+  <text x="148" y="72" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700" fill="#0F2740">Kotatsu</text>
+  <text x="148" y="106" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="500" fill="#1976D2">Project Companion</text>
+  <text x="148" y="130" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#4F6475">Repo map, parser workflow, and validation guardrails</text>
+</svg>

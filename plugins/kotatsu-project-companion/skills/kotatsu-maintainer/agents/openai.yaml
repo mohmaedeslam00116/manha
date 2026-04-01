@@ -1,0 +1,10 @@
+interface:
+  display_name: "Kotatsu Maintainer"
+  short_description: "Maintain the Kotatsu Android app and parser fork"
+  icon_small: "../../assets/kotatsu-icon.svg"
+  icon_large: "../../assets/kotatsu-logo.svg"
+  brand_color: "#1976D2"
+  default_prompt: "Use $kotatsu-maintainer to inspect Kotatsu app changes, parser fixes, and validation steps."
+
+policy:
+  allow_implicit_invocation: true

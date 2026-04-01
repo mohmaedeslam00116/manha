@@ -1,0 +1,7 @@
+interface:
+  display_name: "Kotatsu Parser Fixer"
+  short_description: "Repair broken sources, selectors, and parser flows"
+  default_prompt: "Use $kotatsu-parser-fixer to inspect a broken Kotatsu source, patch the parser, and choose the right validation steps."
+
+policy:
+  allow_implicit_invocation: true

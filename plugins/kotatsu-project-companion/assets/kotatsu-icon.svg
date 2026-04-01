@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title>Kotatsu Project Companion Icon</title>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1976D2"/>
+      <stop offset="100%" stop-color="#0F4C81"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="18" fill="url(#bg)"/>
+  <path d="M18 18h18c6.627 0 12 5.373 12 12v16H30c-6.627 0-12-5.373-12-12V18z" fill="#FFFFFF" opacity="0.96"/>
+  <path d="M30 18h4c6.627 0 12 5.373 12 12v16h-4c-6.627 0-12-5.373-12-12V18z" fill="#E3F2FD"/>
+  <path d="M20 26h18" stroke="#1976D2" stroke-width="3" stroke-linecap="round"/>
+  <path d="M20 33h20" stroke="#1976D2" stroke-width="3" stroke-linecap="round" opacity="0.9"/>
+  <circle cx="46" cy="18" r="8" fill="#FF7043"/>
+  <path d="M46 13v10M41 18h10" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+</svg>
