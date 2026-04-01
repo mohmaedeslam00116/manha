@@ -27,6 +27,7 @@ import javax.inject.Singleton
 
 private const val CONTENT_TYPE_APK = "application/vnd.android.package-archive"
 private const val BUILD_TYPE_RELEASE = "release"
+private const val APK_EXTENSION = ".apk"
 
 @Singleton
 class AppUpdateRepository @Inject constructor(
@@ -37,6 +38,7 @@ class AppUpdateRepository @Inject constructor(
 ) {
 
 	private val availableUpdate = MutableStateFlow<AppVersion?>(null)
+	private val requireOfficialSignature = context.resources.getBoolean(R.bool.require_official_signature_for_updates)
 	private val releasesUrl = buildString {
 		append("https://api.github.com/repos/")
 		append(context.getString(R.string.github_updates_repo))
@@ -55,15 +57,22 @@ class AppUpdateRepository @Inject constructor(
 		val jsonArray = okHttp.newCall(request.build()).await().parseJsonArray()
 		return jsonArray.mapJSONNotNull { json ->
 			val asset = json.optJSONArray("assets")?.find { jo ->
-				jo.optString("content_type") == CONTENT_TYPE_APK
+				jo.optString("content_type") == CONTENT_TYPE_APK ||
+					jo.optString("name").endsWith(APK_EXTENSION, ignoreCase = true)
 			} ?: return@mapJSONNotNull null
+			val versionName = json.optString("name")
+				.takeUnless(String::isBlank)
+				?: json.optString("tag_name")
+			if (versionName.isBlank()) {
+				return@mapJSONNotNull null
+			}
 			AppVersion(
 				id = json.getLong("id"),
 				url = json.getString("html_url"),
-				name = json.getString("name").removePrefix("v"),
+				name = versionName.removePrefix("v"),
 				apkSize = asset.getLong("size"),
 				apkUrl = asset.getString("browser_download_url"),
-				description = json.getString("body"),
+				description = json.optString("body"),
 			)
 		}
 	}
@@ -90,7 +99,9 @@ class AppUpdateRepository @Inject constructor(
 
 	@Suppress("KotlinConstantConditions")
 	suspend fun isUpdateSupported(): Boolean {
-		return BuildConfig.BUILD_TYPE != BUILD_TYPE_RELEASE || appValidator.isOriginalApp.getOrNull() == true
+		return BuildConfig.BUILD_TYPE != BUILD_TYPE_RELEASE ||
+			!requireOfficialSignature ||
+			appValidator.isOriginalApp.getOrNull() == true
 	}
 
 	private inline fun JSONArray.find(predicate: (JSONObject) -> Boolean): JSONObject? {
